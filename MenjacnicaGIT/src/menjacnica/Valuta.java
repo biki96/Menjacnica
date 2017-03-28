@@ -13,38 +13,54 @@ public class Valuta {
 		return nazivValute;
 	}
 	public void setNazivValute(String nazivValute) {
+		if(nazivValute == null || nazivValute.isEmpty())
+			throw new RuntimeException("Naziv valute nije unet!");
 		this.nazivValute = nazivValute;
 	}
 	public String getSkraceniNazivValute() {
 		return skraceniNazivValute;
 	}
 	public void setSkraceniNazivValute(String skraceniNazivValute) {
+		if (skraceniNazivValute == null || skraceniNazivValute.isEmpty())
+			throw new RuntimeException("Skracen naziv valute nije unet!");
 		this.skraceniNazivValute = skraceniNazivValute;
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
+		if (datum == null)
+			throw new RuntimeException("Datum nije ispravno unet!");
 		this.datum = datum;
 	}
 	public double getProdajni() {
 		return prodajni;
 	}
 	public void setProdajni(double prodajni) {
+		if (prodajni <= 0){
+			throw new RuntimeException("Kurs mora da bude veci od nule!");
+		}
 		this.prodajni = prodajni;
 	}
 	public double getKupovni() {
 		return kupovni;
 	}
 	public void setKupovni(double kupovni) {
+		if (kupovni <= 0){
+			throw new RuntimeException("Kurs mora da bude veci od nule!");
+		}
 		this.kupovni = kupovni;
 	}
 	public double getSrednji() {
 		return srednji;
 	}
 	public void setSrednji(double srednji) {
+		if (srednji <= 0){
+			throw new RuntimeException("Kurs mora da bude veci od nule!");
+		}
 		this.srednji = srednji;
 	}
+	
 	@Override
 	public String toString() {
 		return "Valuta [nazivValute=" + nazivValute + ", skraceniNazivValute=" + skraceniNazivValute + ", datum="
