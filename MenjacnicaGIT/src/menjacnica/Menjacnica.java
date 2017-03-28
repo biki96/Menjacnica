@@ -6,14 +6,22 @@ import java.util.LinkedList;
 import interfejsMenjacnica.InterfejsMenjacnica;
 
 public class Menjacnica implements InterfejsMenjacnica {
-
+	public LinkedList<Valuta> valute = new LinkedList<Valuta>();
 	
 	
 	
 	@Override
 	public void dodajKurs(String nazivValute, String skraceniNazivValute, GregorianCalendar datum, double prodajni,
 			double kupovni, double srednji) {
-		// TODO Auto-generated method stub
+		
+		Valuta v = new Valuta();
+		v.setDatum(datum);
+		v.setNazivValute(nazivValute);
+		v.setSkraceniNazivValute(skraceniNazivValute);
+		v.setKupovni(kupovni);
+		v.setProdajni(prodajni);
+		v.setSrednji(srednji);
+		valute.add(v);	
 
 	}
 
