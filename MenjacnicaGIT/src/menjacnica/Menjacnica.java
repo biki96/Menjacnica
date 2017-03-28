@@ -36,7 +36,7 @@ public class Menjacnica implements InterfejsMenjacnica {
 		for (int i = 0; i < valute.size(); i++){
 			if (valute.get(i).getNazivValute().equals(nazivValute) && valute.get(i).getDatum() == datum)
 				valute.remove(i);
-			break;
+			return;
 		}
 		throw new RuntimeException("Data valuta ne postoji!");
 	}
